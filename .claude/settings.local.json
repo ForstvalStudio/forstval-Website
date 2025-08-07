@@ -4,7 +4,23 @@
       "Bash(git init:*)",
       "Bash(git config:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(node:*)",
+      "Bash(npm:*)",
+      "Bash(npx create-next-app:*)",
+      "Bash(dir)",
+      "Bash(xcopy:*)",
+      "Bash(robocopy:*)",
+      "Bash(move:*)",
+      "Bash(move \"forststal-website\\package-lock.json\" .)",
+      "Bash(move \"forststal-website\\next.config.mjs\" .)",
+      "Bash(move \"forststal-website\\tsconfig.json\" .)",
+      "Bash(move \"forststal-website\\tailwind.config.ts\" .)",
+      "Bash(move \"forststal-website\\next-env.d.ts\" .)",
+      "Bash(cp:*)",
+      "Bash(rmdir:*)",
+      "Bash(rm:*)",
+      "Bash(mkdir:*)"
     ],
     "deny": []
   }
