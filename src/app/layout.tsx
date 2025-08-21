@@ -3,8 +3,11 @@ import "./globals.css";
 import { SITE_CONFIG } from "@/lib/constants";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import ScrollProgress from "@/components/ui/ScrollProgress";
+import CustomCursor from "@/components/ui/CustomCursor";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_CONFIG.url),
   title: SITE_CONFIG.title,
   description: SITE_CONFIG.description,
   keywords: [
@@ -57,8 +60,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className="font-body antialiased">
-        <div className="relative min-h-screen bg-dark text-light">
+      <body className="font-body antialiased bg-dark text-light cursor-none">
+        <ScrollProgress />
+        <CustomCursor />
+        <div className="relative min-h-screen">
           <Header />
           <main className="relative z-10">
             {children}

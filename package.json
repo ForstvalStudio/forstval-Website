@@ -6,31 +6,58 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build:analyze": "cross-env ANALYZE=true npm run build",
+    "build:production": "cross-env NODE_ENV=production npm run build",
+    "start:production": "cross-env NODE_ENV=production npm run start",
+    "clean": "rimraf .next node_modules/.cache",
+    "type-check": "tsc --noEmit",
+    "hostinger:deploy": "npm run build:production && npm run start:production",
+    "production-check": "node scripts/production-check.js",
+    "init-db": "node scripts/init-db.js",
+    "deploy": "chmod +x deploy.sh && ./deploy.sh",
+    "health": "curl -s http://localhost:3000/api/health | grep -q healthy && echo 'Application is healthy' || echo 'Application is unhealthy'"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.14",
     "@radix-ui/react-dropdown-menu": "^2.1.15",
     "@radix-ui/react-navigation-menu": "^1.2.13",
+    "@react-spring/web": "^10.0.1",
     "@types/animejs": "^3.1.13",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/nodemailer": "^6.4.17",
     "animejs": "^4.1.2",
+    "autoprefixer": "^10.4.21",
+    "bcryptjs": "^3.0.2",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.12",
+    "jsonwebtoken": "^9.0.2",
     "lucide-react": "^0.537.0",
+    "mysql2": "^3.14.3",
     "next": "14.2.31",
+    "nodemailer": "^7.0.5",
     "react": "^18",
     "react-dom": "^18",
+    "react-intersection-observer": "^9.16.0",
     "sharp": "^0.34.3",
-    "tailwind-merge": "^3.3.1"
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss": "^3.4.1",
+    "zod": "^4.0.16"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "cross-env": "^7.0.3",
     "eslint": "^8",
     "eslint-config-next": "14.2.31",
     "postcss": "^8",
-    "tailwindcss": "^3.4.1",
+    "rimraf": "^5.0.5",
     "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
   }
 }

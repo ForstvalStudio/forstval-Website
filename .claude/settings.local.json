@@ -20,7 +20,9 @@
       "Bash(cp:*)",
       "Bash(rmdir:*)",
       "Bash(rm:*)",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Bash(del \"C:\\Users\\yashw\\Downloads\\ForstvalStudio\\next.config.static.mjs\")",
+      "Bash(del \"C:\\Users\\yashw\\Downloads\\ForstvalStudio\\STATIC-EXPORT-GUIDE.md\")"
     ],
     "deny": []
   }
